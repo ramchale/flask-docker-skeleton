@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  front:
+    build: ./front
+    ports:
+        - 80:80
+        - 443:443
+    volumes:
+      - ./front/app:/app:cached
