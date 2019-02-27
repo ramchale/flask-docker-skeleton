@@ -48,3 +48,10 @@ It has two routes '/' for a straight text response and '/test' for an html respo
 ### Docker/Docker Compose unavailable as a Project Interpreter
 
 You may need to enable Remote Interpreter. There is also a bug with PyCharm where the docker options can disappear from the list and the solution that worked for me was to delete my PyCharm settings folder and restart PyCharm
+
+### pycharm couldn't find `docker` binary.
+
+Current [bug](https://youtrack.jetbrains.com/issue/PY-29342) within pycharm where it might not detect that Docker is installed. Simple fix below.
+
+1. Run Tools | Create Command-line Launcher from the PyCharm menu.
+2. Run /usr/local/bin/charm from terminal.
