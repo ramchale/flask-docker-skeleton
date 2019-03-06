@@ -1,0 +1,7 @@
+uwsgi:
+  socket: 0.0.0.0:3031
+  uid: uwsgi
+  plugins: python3
+  protocol: uwsgi
+  wsgi: app:app
+  pythonpath: /usr/local/lib/python3.6/site-packages

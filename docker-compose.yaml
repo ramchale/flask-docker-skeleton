@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  front:
+    build: ./front/app
+    ports:
+      - 3031
+    volumes:
+      - ./front/app:/app:cached
+
+  router:
+    build: ./router
+    depends_on:
+      - front
+    ports:
+      - 80:80
+    volumes:
+      - ./web:/var/www/web
