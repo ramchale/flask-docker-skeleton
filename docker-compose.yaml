@@ -2,11 +2,11 @@ version: '3'
 
 services:
   front:
-    build: ./front/app
+    build: ./front
     ports:
       - 3031
     volumes:
-      - ./front/app:/app:cached
+      - ./front:/app:cached
 
   router:
     build: ./router
@@ -16,3 +16,9 @@ services:
       - 80:80
     volumes:
       - ./web:/var/www/web
+
+  unit-tests:
+    build: ./front
+    volumes:
+      - ./front:/app:cached
+    command: [python, '-m', 'pytest', '../tests/']
